@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 
 interface ISite {
-  name: string
+  name?: string
   url: string
 }
 
@@ -20,6 +20,12 @@ const openSite = (site: ISite) => {
   a.href = site.url
   a.target = '_blank'
   a.click()
+}
+const confirmUrl: ISite = {
+  url: 'https://wa.me/5515991157834?text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%0AClaro%20que%20eu%20vou%2C%20pode%20me%20confirmar%2C%20estarei%20la%2C%20obrigado%20pelo%20convite!',
+}
+const disconfirmUrl: ISite = {
+  url: 'https://wa.me/5515991157834?text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%0AInfelizmente%20n%C3%A3o%20irei%20conseguir%20ir%2C%20mas%20muito%20obrigado%20pelo%20convite',
 }
 </script>
 
@@ -48,26 +54,8 @@ const openSite = (site: ISite) => {
     <p><b>👉 Confirme sua presença clicando aqui:</b></p>
     <br />
     <div>
-      <button
-        class="button"
-        @click="
-          openSite(
-            'https://wa.me/5515991157834?text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%0AClaro%20que%20eu%20vou%2C%20pode%20me%20confirmar%2C%20estarei%20la%2C%20obrigado%20pelo%20convite!',
-          )
-        "
-      >
-        Eu vou 🎉
-      </button>
-      <button
-        class="button"
-        @click="
-          openSite(
-            'https://wa.me/5515991157834?text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%0AInfelizmente%20n%C3%A3o%20irei%20conseguir%20ir%2C%20mas%20muito%20obrigado%20pelo%20convite',
-          )
-        "
-      >
-        Não conseguirei ir 😔
-      </button>
+      <button class="button" @click="openSite(confirmUrl)">Eu vou 🎉</button>
+      <button class="button" @click="openSite(disconfirmUrl)">Não conseguirei ir 😔</button>
     </div>
   </section>
   <br />
