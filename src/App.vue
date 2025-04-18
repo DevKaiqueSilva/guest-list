@@ -48,7 +48,7 @@ const disconfirmUrl: ISite = {
     <p>Agradecemos profundamente por todo apoio e por sempre estarem presente em nossas vidas.</p>
     <p>
       Para que tudo seja preparado com carinho e cuidado, pedimos que confirme sua presença até
-      xx/xx/xxxx
+      <b style="font-weight: bold">21/04/2025</b>.
     </p>
     <br />
     <p><b>👉 Confirme sua presença clicando aqui:</b></p>
